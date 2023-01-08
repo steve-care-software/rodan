@@ -1,0 +1,8 @@
+github.com/steve-care-software/ast v0.0.0-20230108063820-4c69a75302be h1:3yOfdYglxDBQr9IzQZ7DPcUknBxTm92ODqQqBna1GG4=
+github.com/steve-care-software/ast v0.0.0-20230108063820-4c69a75302be/go.mod h1:lSRYhSBXmD8Bn9fkGmF5jP746vmWGVwLc1GSNJQXbCo=
+github.com/steve-care-software/interpreter v0.0.0-20230108070439-840cfffadfca h1:mghFwsfpXsIzVz4qAXj2weT8F7QVdp55qtrHfGBo4e8=
+github.com/steve-care-software/interpreter v0.0.0-20230108070439-840cfffadfca/go.mod h1:urOQKJiJrv1CFvKb9Jic3iRqESz7IrCWIJc5/JzDgyU=
+github.com/steve-care-software/query v0.0.0-20230108070738-7585b8097427 h1:Yu705c8nxWaNfrvbio2x1tSUEv/r/FvlB9T0A+a/LWg=
+github.com/steve-care-software/query v0.0.0-20230108070738-7585b8097427/go.mod h1:TZtfLgGKxgDUehB64Heoe3sPMovC64XYDh9A1NWH2jc=
+github.com/steve-care-software/vm v0.0.0-20230108082722-29f650e568b0 h1:HsRR1y0vcUrfGX/+pgCj0cyXjgGL+J7WB++YXWI2NOw=
+github.com/steve-care-software/vm v0.0.0-20230108082722-29f650e568b0/go.mod h1:w8zOEEEqZyHC4thnr349hTGrp0JDPXpmCym9orBTV30=

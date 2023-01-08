@@ -1,0 +1,17 @@
+module @castToUint:1;;
+module @astValue:7;;
+
+<- $output;;
+
+// declare the applications:
+@castToUint $castToUintApp;;
+@astValue $astValueApp;;
+
+// @ value:
+$name = commercialA;;
+$number = 64;;
+attach $number:0 $castToUintApp;;
+$castedNumber = execute $castToUintApp;;
+attach $castedNumber:0 $astValueApp;;
+attach $name:1 $astValueApp;;
+$output = execute $astValueApp;;
