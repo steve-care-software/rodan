@@ -1,0 +1,63 @@
+module @list:0;;
+module @container:17;;
+module @line:18;;
+module @block:19;;
+module @token:22;;
+module @instance:24;;
+module @element:16;;
+
+-> $firstLetter;;
+-> $remainingLetters;;
+-> $cardinalityMandatorySingle;;
+-> $cardinalityOptionalMultiple;;
+<- $output;;
+
+// declare the applications:
+@list $listApp;;
+@container $containerApp;;
+@line $lineApp;;
+@block $blockApp;;
+@token $tokenApp;;
+@instance $instanceApp;;
+@element $elementApp;;
+
+// line lower case:
+attach $firstLetter:0 $instanceApp;;
+$instanceFirstLetter = execute $instanceApp;;
+attach $cardinalityMandatorySingle:0 $elementApp;;
+attach $instanceFirstLetter:3 $elementApp;;
+$elementFirstLetter = execute $elementApp;;
+attach $elementFirstLetter:0 $containerApp;;
+$firstLetterContainer = execute $containerApp;;
+attach $firstLetterContainer:0 $listApp;;
+$firstLetterList = execute $listApp;;
+attach $firstLetterList:0 $lineApp;;
+$lineFirstLetter = execute $lineApp;;
+
+// line upper case:
+attach $remainingLetters:0 $instanceApp;;
+$instanceRemainingLetters = execute $instanceApp;;
+attach $cardinalityOptionalMultiple:0 $elementApp;;
+attach $instanceRemainingLetters:3 $elementApp;;
+$elementRemainingLetters = execute $elementApp;;
+attach $elementRemainingLetters:0 $containerApp;;
+$remainingLettersContainer = execute $containerApp;;
+attach $remainingLettersContainer:0 $listApp;;
+$remainingLettersList = execute $listApp;;
+attach $remainingLettersList:0 $lineApp;;
+$lineRemainingLetter = execute $lineApp;;
+
+// lines:
+attach $lineFirstLetter:0 $listApp;;
+attach $lineRemainingLetter:1 $listApp;;
+$lines = execute $listApp;;
+
+// block:
+attach $lines:0 $blockApp;;
+$block = execute $blockApp;;
+
+// token:
+$name = anyLetter;;
+attach $name:0 $tokenApp;;
+attach $block:1 $tokenApp;;
+$output = execute $tokenApp;;

@@ -1,3 +1,5 @@
+github.com/juju/fslock v0.0.0-20160525022230-4d5c94c67b4b h1:FQ7+9fxhyp82ks9vAuyPzG0/vVbWwMwLJ+P6yJI5FN8=
+github.com/juju/fslock v0.0.0-20160525022230-4d5c94c67b4b/go.mod h1:HMcgvsgd0Fjj4XXDkbjdmlbI505rUPBs6WBMYg2pXks=
 github.com/steve-care-software/ast v0.0.0-20230108063820-4c69a75302be h1:3yOfdYglxDBQr9IzQZ7DPcUknBxTm92ODqQqBna1GG4=
 github.com/steve-care-software/ast v0.0.0-20230108063820-4c69a75302be/go.mod h1:lSRYhSBXmD8Bn9fkGmF5jP746vmWGVwLc1GSNJQXbCo=
 github.com/steve-care-software/interpreter v0.0.0-20230108070439-840cfffadfca h1:mghFwsfpXsIzVz4qAXj2weT8F7QVdp55qtrHfGBo4e8=

@@ -1,0 +1,287 @@
+module @list:0;;
+module @container:17;;
+module @line:18;;
+module @block:19;;
+module @token:22;;
+
+-> $letterZero;;
+-> $letterOne;;
+-> $letterTwo;;
+-> $letterThree;;
+-> $letterFour;;
+-> $letterFive;;
+-> $letterSix;;
+-> $letterSeven;;
+-> $letterHeight;;
+-> $letterNine;;
+-> $letterTen;;
+-> $letterEleven;;
+-> $letterTwelve;;
+-> $letterThirteen;;
+-> $letterFourteen;;
+-> $letterFifteen;;
+-> $letterSixteen;;
+-> $letterSeventeen;;
+-> $letterHeighteen;;
+-> $letterNineteen;;
+-> $letterTwenty;;
+-> $letterTwentyOne;;
+-> $letterTwentyTwo;;
+-> $letterTwentyThree;;
+-> $letterTwentyFour;;
+-> $letterTwentyFive;;
+-> $name;;
+<- $output;;
+
+// declare the applications:
+@list $listApp;;
+@container $containerApp;;
+@line $lineApp;;
+@block $blockApp;;
+@token $tokenApp;;
+
+// line zero:
+attach $letterZero:0 $containerApp;;
+$letterZeroContainer = execute $containerApp;;
+attach $letterZeroContainer:0 $listApp;;
+$letterZeroList = execute $listApp;;
+attach $letterZeroList:0 $lineApp;;
+$lineZero = execute $lineApp;;
+
+// line one:
+attach $letterOne:0 $containerApp;;
+$letterOneContainer = execute $containerApp;;
+attach $letterOneContainer:0 $listApp;;
+$letterOneList = execute $listApp;;
+attach $letterOneList:0 $lineApp;;
+$lineOne = execute $lineApp;;
+
+// line two:
+attach $letterTwo:0 $containerApp;;
+$letterTwoContainer = execute $containerApp;;
+attach $letterTwoContainer:0 $listApp;;
+$letterTwoList = execute $listApp;;
+attach $letterTwoList:0 $lineApp;;
+$lineTwo = execute $lineApp;;
+
+// line three:
+attach $letterThree:0 $containerApp;;
+$letterThreeContainer = execute $containerApp;;
+attach $letterThreeContainer:0 $listApp;;
+$letterThreeList = execute $listApp;;
+attach $letterThreeList:0 $lineApp;;
+$lineThree = execute $lineApp;;
+
+// line four:
+attach $letterFour:0 $containerApp;;
+$letterFourContainer = execute $containerApp;;
+attach $letterFourContainer:0 $listApp;;
+$letterFourList = execute $listApp;;
+attach $letterFourList:0 $lineApp;;
+$lineFour = execute $lineApp;;
+
+// line five:
+attach $letterFive:0 $containerApp;;
+$letterFiveContainer = execute $containerApp;;
+attach $letterFiveContainer:0 $listApp;;
+$letterFiveList = execute $listApp;;
+attach $letterFiveList:0 $lineApp;;
+$lineFive = execute $lineApp;;
+
+// line six:
+attach $letterSix:0 $containerApp;;
+$letterSixContainer = execute $containerApp;;
+attach $letterSixContainer:0 $listApp;;
+$letterSixList = execute $listApp;;
+attach $letterSixList:0 $lineApp;;
+$lineSix = execute $lineApp;;
+
+// line seven:
+attach $letterSeven:0 $containerApp;;
+$letterSevenContainer = execute $containerApp;;
+attach $letterSevenContainer:0 $listApp;;
+$letterSevenList = execute $listApp;;
+attach $letterSevenList:0 $lineApp;;
+$lineSeven = execute $lineApp;;
+
+// line height:
+attach $letterHeight:0 $containerApp;;
+$letterHeightContainer = execute $containerApp;;
+attach $letterHeightContainer:0 $listApp;;
+$letterHeightList = execute $listApp;;
+attach $letterHeightList:0 $lineApp;;
+$lineHeight = execute $lineApp;;
+
+// line nine:
+attach $letterNine:0 $containerApp;;
+$letterNineContainer = execute $containerApp;;
+attach $letterNineContainer:0 $listApp;;
+$letterNineList = execute $listApp;;
+attach $letterNineList:0 $lineApp;;
+$lineNine = execute $lineApp;;
+
+// line ten:
+attach $letterTen:0 $containerApp;;
+$letterTenContainer = execute $containerApp;;
+attach $letterTenContainer:0 $listApp;;
+$letterTenList = execute $listApp;;
+attach $letterTenList:0 $lineApp;;
+$lineTen = execute $lineApp;;
+
+// line eleven:
+attach $letterEleven:0 $containerApp;;
+$letterElevenContainer = execute $containerApp;;
+attach $letterElevenContainer:0 $listApp;;
+$letterElevenList = execute $listApp;;
+attach $letterElevenList:0 $lineApp;;
+$lineEleven = execute $lineApp;;
+
+// line twelve:
+attach $letterTwelve:0 $containerApp;;
+$letterTwelveContainer = execute $containerApp;;
+attach $letterTwelveContainer:0 $listApp;;
+$letterTwelveList = execute $listApp;;
+attach $letterTwelveList:0 $lineApp;;
+$lineTwelve = execute $lineApp;;
+
+// line thirteen:
+attach $letterThirteen:0 $containerApp;;
+$letterThirteenContainer = execute $containerApp;;
+attach $letterThirteenContainer:0 $listApp;;
+$letterThirteenList = execute $listApp;;
+attach $letterThirteenList:0 $lineApp;;
+$lineThirteen = execute $lineApp;;
+
+// line fourteen:
+attach $letterFourteen:0 $containerApp;;
+$letterFourteenContainer = execute $containerApp;;
+attach $letterFourteenContainer:0 $listApp;;
+$letterFourteenList = execute $listApp;;
+attach $letterFourteenList:0 $lineApp;;
+$lineFourteen = execute $lineApp;;
+
+// line fifteen:
+attach $letterFifteen:0 $containerApp;;
+$letterFifteenContainer = execute $containerApp;;
+attach $letterFifteenContainer:0 $listApp;;
+$letterFifteenList = execute $listApp;;
+attach $letterFifteenList:0 $lineApp;;
+$lineFifteen = execute $lineApp;;
+
+// line sixteen:
+attach $letterSixteen:0 $containerApp;;
+$letterSixteenContainer = execute $containerApp;;
+attach $letterSixteenContainer:0 $listApp;;
+$letterSixteenList = execute $listApp;;
+attach $letterSixteenList:0 $lineApp;;
+$lineSixteen = execute $lineApp;;
+
+// line seventeen:
+attach $letterSeventeen:0 $containerApp;;
+$letterSeventeenContainer = execute $containerApp;;
+attach $letterSeventeenContainer:0 $listApp;;
+$letterSeventeenList = execute $listApp;;
+attach $letterSeventeenList:0 $lineApp;;
+$lineSeventeen = execute $lineApp;;
+
+// line heighteen:
+attach $letterHeighteen:0 $containerApp;;
+$letterHeighteenContainer = execute $containerApp;;
+attach $letterHeighteenContainer:0 $listApp;;
+$letterHeighteenList = execute $listApp;;
+attach $letterHeighteenList:0 $lineApp;;
+$lineHeighteen = execute $lineApp;;
+
+// line nineteen:
+attach $letterNineteen:0 $containerApp;;
+$letterNineteenContainer = execute $containerApp;;
+attach $letterNineteenContainer:0 $listApp;;
+$letterNineteenList = execute $listApp;;
+attach $letterNineteenList:0 $lineApp;;
+$lineNineteen = execute $lineApp;;
+
+// line twenty:
+attach $letterTwenty:0 $containerApp;;
+$letterTwentyContainer = execute $containerApp;;
+attach $letterTwentyContainer:0 $listApp;;
+$letterTwentyList = execute $listApp;;
+attach $letterTwentyList:0 $lineApp;;
+$lineTwenty = execute $lineApp;;
+
+// line twenty one:
+attach $letterTwentyOne:0 $containerApp;;
+$letterTwentyOneContainer = execute $containerApp;;
+attach $letterTwentyOneContainer:0 $listApp;;
+$letterTwentyOneList = execute $listApp;;
+attach $letterTwentyOneList:0 $lineApp;;
+$lineTwentyOne = execute $lineApp;;
+
+// line twenty two:
+attach $letterTwentyTwo:0 $containerApp;;
+$letterTwentyTwoContainer = execute $containerApp;;
+attach $letterTwentyTwoContainer:0 $listApp;;
+$letterTwentyTwoList = execute $listApp;;
+attach $letterTwentyTwoList:0 $lineApp;;
+$lineTwentyTwo = execute $lineApp;;
+
+// line twenty three:
+attach $letterTwentyThree:0 $containerApp;;
+$letterTwentyThreeContainer = execute $containerApp;;
+attach $letterTwentyThreeContainer:0 $listApp;;
+$letterTwentyThreeList = execute $listApp;;
+attach $letterTwentyThreeList:0 $lineApp;;
+$lineTwentyThree = execute $lineApp;;
+
+// line twenty four:
+attach $letterTwentyFour:0 $containerApp;;
+$letterTwentyFourContainer = execute $containerApp;;
+attach $letterTwentyFourContainer:0 $listApp;;
+$letterTwentyFourList = execute $listApp;;
+attach $letterTwentyFourList:0 $lineApp;;
+$lineTwentyFour = execute $lineApp;;
+
+// line twenty five:
+attach $letterTwentyFive:0 $containerApp;;
+$letterTwentyFiveContainer = execute $containerApp;;
+attach $letterTwentyFiveContainer:0 $listApp;;
+$letterTwentyFiveList = execute $listApp;;
+attach $letterTwentyFiveList:0 $lineApp;;
+$lineTwentyFive = execute $lineApp;;
+
+// lines:
+attach $lineZero:0 $listApp;;
+attach $lineOne:1 $listApp;;
+attach $lineTwo:2 $listApp;;
+attach $lineThree:3 $listApp;;
+attach $lineFour:4 $listApp;;
+attach $lineFive:5 $listApp;;
+attach $lineSix:6 $listApp;;
+attach $lineSeven:7 $listApp;;
+attach $lineHeight:8 $listApp;;
+attach $lineNine:9 $listApp;;
+attach $lineTen:10 $listApp;;
+attach $lineEleven:11 $listApp;;
+attach $lineTwelve:12 $listApp;;
+attach $lineThirteen:13 $listApp;;
+attach $lineFourteen:14 $listApp;;
+attach $lineFifteen:15 $listApp;;
+attach $lineSixteen:16 $listApp;;
+attach $lineSeventeen:17 $listApp;;
+attach $lineHeighteen:18 $listApp;;
+attach $lineNineteen:19 $listApp;;
+attach $lineTwenty:20 $listApp;;
+attach $lineTwentyOne:21 $listApp;;
+attach $lineTwentyTwo:22 $listApp;;
+attach $lineTwentyThree:23 $listApp;;
+attach $lineTwentyFour:24 $listApp;;
+attach $lineTwentyFive:25 $listApp;;
+$lines = execute $listApp;;
+
+// block:
+attach $lines:0 $blockApp;;
+$block = execute $blockApp;;
+
+// token:
+attach $name:0 $tokenApp;;
+attach $block:1 $tokenApp;;
+$output = execute $tokenApp;;

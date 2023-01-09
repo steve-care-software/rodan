@@ -1,11 +1,9 @@
-package applications
+package modules
 
 import (
 	"fmt"
 	"io/ioutil"
 	"testing"
-
-	"github.com/steve-care-software/rodan/modules"
 )
 
 func TestApplication_Success(t *testing.T) {
@@ -17,7 +15,7 @@ func TestApplication_Success(t *testing.T) {
 	}
 
 	basePath := "./../scripts"
-	virtualMachine := NewApplication(modules.NewFetchModuleFunc(basePath))
+	virtualMachine := NewApplication(newVMModulesFuncs(basePath, 200))
 	tree, err := virtualMachine.Lex(script)
 	if err != nil {
 		t.Errorf("the error was expected to be nil, error returned: %s", err.Error())
@@ -31,7 +29,7 @@ func TestApplication_Success(t *testing.T) {
 	}
 
 	if len(remaining) > 0 {
-		t.Errorf("the script was expected to NOT contain remaining data")
+		t.Errorf("the script was expected to NOT contain remaining data: %s", remaining)
 		return
 	}
 
@@ -41,5 +39,5 @@ func TestApplication_Success(t *testing.T) {
 		return
 	}
 
-	fmt.Printf("\n%v\n", output)
+	fmt.Printf("\n%s\n", output)
 }
