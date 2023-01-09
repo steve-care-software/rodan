@@ -87,5 +87,46 @@ func (obj *line) IsSuccessful() bool {
 		return true
 	}
 
-	return len(requested) == len(elements)
+	for _, oneContainer := range requested {
+		if oneContainer.IsElement() {
+			requestedElement := oneContainer.Element()
+			requestedMin := requestedElement.Cardinality().Min()
+			if requestedMin <= 0 {
+				continue
+			}
+
+			requestedName := requestedElement.Name()
+			element, err := obj.elements.Fetch(requestedName)
+			if err != nil {
+				return false
+			}
+
+			amount := element.Amount()
+			if requestedMin > amount {
+				return false
+			}
+		}
+
+		if oneContainer.IsCompose() {
+			requestedOccurences := uint(0)
+			compose := oneContainer.Compose()
+			requestedComposeElements := compose.List()
+			for _, oneElement := range requestedComposeElements {
+				requestedOccurences += oneElement.Occurences()
+			}
+
+			requestedName := compose.Name()
+			element, err := obj.elements.Fetch(requestedName)
+			if err != nil {
+				return false
+			}
+
+			amount := element.Amount()
+			if amount != requestedOccurences {
+				return false
+			}
+		}
+	}
+
+	return true
 }

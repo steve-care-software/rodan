@@ -145,7 +145,8 @@ func NewApplication(modulesFn vm_applications.FetchModulesFn) vm_applications.Ap
 	return vmApp
 }
 
-func newVMModulesFuncs(
+// NewVMModulesFuncs creates a new vm modules funcs
+func NewVMModulesFuncs(
 	basePath string,
 	chunkSize uint,
 ) vm_applications.FetchModulesFn {

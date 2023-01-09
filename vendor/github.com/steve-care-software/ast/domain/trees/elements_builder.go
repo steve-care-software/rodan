@@ -35,5 +35,15 @@ func (app *elementsBuilder) Now() (Elements, error) {
 		return nil, errors.New("there must be at least 1 Element in order to build a Elements instance")
 	}
 
-	return createElements(app.list), nil
+	mp := map[string]Element{}
+	for _, oneElement := range app.list {
+		if !oneElement.HasGrammar() {
+			continue
+		}
+
+		name := oneElement.Grammar().Name()
+		mp[name] = oneElement
+	}
+
+	return createElements(app.list, mp), nil
 }

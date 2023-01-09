@@ -1,0 +1,67 @@
+module @list:0;;
+module @container:17;;
+module @line:18;;
+module @block:19;;
+module @token:22;;
+module @instance:24;;
+module @element:16;;
+
+-> $name;;
+-> $assignmentSign;;
+-> $value;;
+-> $cardinalityMandatorySingle;;
+<- $output;;
+
+// declare the applications:
+@list $containerListApp;;
+@list $lineListApp;;
+@container $containerApp;;
+@line $lineApp;;
+@block $blockApp;;
+@token $tokenApp;;
+@instance $instanceApp;;
+@element $elementApp;;
+
+// element name:
+attach $name:0 $instanceApp;;
+$instanceName = execute $instanceApp;;
+attach $cardinalityMandatorySingle:0 $elementApp;;
+attach $instanceName:3 $elementApp;;
+$elementName = execute $elementApp;;
+attach $elementName:0 $containerApp;;
+$nameContainer = execute $containerApp;;
+
+// element assignment sign:
+attach $assignmentSign:0 $containerApp;;
+$assignmentSignContainer = execute $containerApp;;
+
+// element value:
+attach $value:0 $instanceApp;;
+$instanceValue = execute $instanceApp;;
+attach $cardinalityMandatorySingle:0 $elementApp;;
+attach $instanceValue:3 $elementApp;;
+$elementValue = execute $elementApp;;
+attach $elementValue:0 $containerApp;;
+$valueContainer = execute $containerApp;;
+
+// line:
+attach $nameContainer:0 $containerListApp;;
+attach $assignmentSignContainer:1 $containerListApp;;
+attach $valueContainer:2 $containerListApp;;
+$containerList = execute $containerListApp;;
+attach $containerList:0 $lineApp;;
+$singleLine = execute $lineApp;;
+
+// lines:
+attach $singleLine:0 $lineListApp;;
+$lines = execute $lineListApp;;
+
+// block:
+attach $lines:0 $blockApp;;
+$block = execute $blockApp;;
+
+// token:
+$name = nameValueAssignment;;
+attach $name:0 $tokenApp;;
+attach $block:1 $tokenApp;;
+$output = execute $tokenApp;;

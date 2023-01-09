@@ -128,12 +128,13 @@ type ElementsBuilder interface {
 // Elements represents elements
 type Elements interface {
 	List() []Element
+	Fetch(name string) (Element, error)
 }
 
 // ElementBuilder represents an element builder
 type ElementBuilder interface {
 	Create() ElementBuilder
-	WithGrammar(grammar grammars.Element) ElementBuilder
+	WithGrammar(grammar grammars.Container) ElementBuilder
 	WithContents(contents Contents) ElementBuilder
 	Now() (Element, error)
 }
@@ -146,7 +147,7 @@ type Element interface {
 	Contents() Contents
 	Amount() uint
 	HasGrammar() bool
-	Grammar() grammars.Element
+	Grammar() grammars.Container
 }
 
 // ContentsBuilder represents contents builder

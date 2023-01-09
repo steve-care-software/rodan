@@ -29,6 +29,15 @@ func createContainerInternally(
 	return &out
 }
 
+// Name returns the name
+func (obj *container) Name() string {
+	if obj.IsElement() {
+		return obj.element.Name()
+	}
+
+	return obj.compose.Name()
+}
+
 // IsElement returns true if there is an element, false otherwise
 func (obj *container) IsElement() bool {
 	return obj.element != nil

@@ -9,6 +9,7 @@ import (
 	interpreter_applications "github.com/steve-care-software/interpreter/applications"
 	"github.com/steve-care-software/interpreter/domain/instructions"
 	"github.com/steve-care-software/interpreter/domain/programs"
+	"github.com/steve-care-software/interpreter/domain/programs/modules"
 	query_applications "github.com/steve-care-software/query/applications"
 	"github.com/steve-care-software/query/domain/queries"
 )
@@ -20,6 +21,7 @@ type application struct {
 	grammar                grammars.Grammar
 	query                  queries.Query
 	fetchModulesFn         FetchModulesFn
+	modules                modules.Modules
 }
 
 func createApplication(
@@ -37,6 +39,7 @@ func createApplication(
 		grammar:                grammar,
 		query:                  query,
 		fetchModulesFn:         fetchModulesFn,
+		modules:                nil,
 	}
 
 	return &out
@@ -59,12 +62,16 @@ func (app *application) Parse(tree trees.Tree) (programs.Program, []byte, error)
 	}
 
 	if castedInstructions, ok := ins.(instructions.Instructions); ok {
-		modules, err := app.fetchModulesFn()
-		if err != nil {
-			return nil, remaining, err
+		if app.modules == nil {
+			modules, err := app.fetchModulesFn()
+			if err != nil {
+				return nil, remaining, err
+			}
+
+			app.modules = modules
 		}
 
-		program, err := app.interpreterApplication.Compile(modules, castedInstructions)
+		program, err := app.interpreterApplication.Compile(app.modules, castedInstructions)
 		if err != nil {
 			return nil, remaining, err
 		}

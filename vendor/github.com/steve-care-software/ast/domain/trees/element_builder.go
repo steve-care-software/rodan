@@ -7,7 +7,7 @@ import (
 )
 
 type elementBuilder struct {
-	grammar  grammars.Element
+	grammar  grammars.Container
 	contents Contents
 }
 
@@ -26,7 +26,7 @@ func (app *elementBuilder) Create() ElementBuilder {
 }
 
 // WithGrammar adds a grammar to the builder
-func (app *elementBuilder) WithGrammar(grammar grammars.Element) ElementBuilder {
+func (app *elementBuilder) WithGrammar(grammar grammars.Container) ElementBuilder {
 	app.grammar = grammar
 	return app
 }

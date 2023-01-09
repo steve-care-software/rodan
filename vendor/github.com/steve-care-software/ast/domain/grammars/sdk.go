@@ -287,6 +287,7 @@ type ContainerBuilder interface {
 
 // Container represents a container
 type Container interface {
+	Name() string
 	IsElement() bool
 	Element() Element
 	IsCompose() bool
@@ -326,12 +327,14 @@ type ElementContent interface {
 // ComposeBuilder represents a compose builder
 type ComposeBuilder interface {
 	Create() ComposeBuilder
+	WithName(name string) ComposeBuilder
 	WithList(list []ComposeElement) ComposeBuilder
 	Now() (Compose, error)
 }
 
 // Compose represents a compose
 type Compose interface {
+	Name() string
 	List() []ComposeElement
 }
 

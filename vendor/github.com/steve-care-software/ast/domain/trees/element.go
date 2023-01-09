@@ -9,7 +9,7 @@ import (
 
 type element struct {
 	contents Contents
-	grammar  grammars.Element
+	grammar  grammars.Container
 }
 
 func createElement(
@@ -20,14 +20,14 @@ func createElement(
 
 func createElementWithGrammar(
 	contents Contents,
-	grammar grammars.Element,
+	grammar grammars.Container,
 ) Element {
 	return createElementInternally(contents, grammar)
 }
 
 func createElementInternally(
 	contents Contents,
-	grammar grammars.Element,
+	grammar grammars.Container,
 ) Element {
 	out := element{
 		grammar:  grammar,
@@ -96,18 +96,32 @@ func (obj *element) IsSuccessful() bool {
 		return true
 	}
 
-	cardinality := obj.grammar.Cardinality()
-	min := cardinality.Min()
 	amount := obj.Amount()
-	if amount < min {
-		return false
-	}
-
-	if cardinality.HasMax() {
-		pMax := cardinality.Max()
-		if amount > *pMax {
+	if obj.grammar.IsElement() {
+		cardinality := obj.grammar.Element().Cardinality()
+		min := cardinality.Min()
+		if amount < min {
 			return false
 		}
+
+		if cardinality.HasMax() {
+			pMax := cardinality.Max()
+			if amount > *pMax {
+				return false
+			}
+		}
+
+		return true
+	}
+
+	requestedAmount := uint(0)
+	composeList := obj.grammar.Compose().List()
+	for _, oneCompose := range(composeList) {
+		requestedAmount += oneCompose.Occurences()
+	}
+
+	if amount < requestedAmount {
+		return false
 	}
 
 	return true
@@ -119,7 +133,7 @@ func (obj *element) Contents() Contents {
 }
 
 // Grammar returns the grammar
-func (obj *element) Grammar() grammars.Element {
+func (obj *element) Grammar() grammars.Container {
 	return obj.grammar
 }
 

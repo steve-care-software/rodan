@@ -6,6 +6,37 @@ import (
 	"github.com/steve-care-software/ast/domain/grammars/values"
 )
 
+const grammarTokenName = "grammar"
+
+const byteLength = 256
+const assignmentSign = ":"
+const everythingPrefixSign = "#"
+const everythingEscapePrefixSign = "!"
+const amountSeparator = "|"
+const cardinalitySingleOptional = "?"
+const cardinalityMultipleMandatory = "+"
+const cardinalityMultipleOptional = "*"
+const cardinalityPrefix = "["
+const cardinalitySuffix = "]"
+const cardinalitySeparator = ","
+const lineDelimiter = "|"
+const blockSuffix = ";"
+const validSuiteName = "valid"
+const invalidSuiteName = "invalid"
+const suiteDelimiter = "&"
+const suitePrefix = "---"
+const suiteSuffix = ";"
+const channelPrefix = "-"
+const channelSuffix = ";"
+const channelPrevNextPrefix = "["
+const channelPrevNextSuffix = "]"
+const channelPrevNextDelimiter = ":"
+const rootPrefix = "@"
+const rootSuffix = ";"
+const instructionSuffix = ";"
+const externalTokenPrefix = "{"
+const externalTokenSuffix = "{"
+
 // NewGrammar creates a new grammar instance
 func NewGrammar() grammars.Grammar {
 	builder := grammars.NewBuilder()
@@ -21,6 +52,8 @@ func NewGrammar() grammars.Grammar {
 	lineBuilder := grammars.NewLineBuilder()
 	containerBuilder := grammars.NewContainerBuilder()
 	elementBuilder := grammars.NewElementBuilder()
+	composeBuilder := grammars.NewComposeBuilder()
+	composeElementBuilder := grammars.NewComposeElementBuilder()
 	valueBuilder := values.NewBuilder()
 	cardinalityBuilder := cardinalities.NewBuilder()
 	grammarIns := createGrammar(
@@ -37,6 +70,8 @@ func NewGrammar() grammars.Grammar {
 		lineBuilder,
 		containerBuilder,
 		elementBuilder,
+		composeBuilder,
+		composeElementBuilder,
 		valueBuilder,
 		cardinalityBuilder,
 	)
